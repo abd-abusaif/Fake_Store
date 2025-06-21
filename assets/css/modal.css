@@ -1,0 +1,206 @@
+
+  .products .row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap:50px;
+  padding: 20px;
+}
+
+.product {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius:20px;
+  padding: 16px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s;
+  height: 100%;
+}
+
+.product:hover {
+  transform: translateY(-5px);
+}
+
+.product img {
+  width: 100%;
+  height: 200px; /* توحيد الارتفاع */
+  object-fit: contain;
+  margin-bottom: 12px;
+}
+
+.product h2 {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 8px;
+  height: 40px; /* ثبات مكان العنوان */
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.product p {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+
+.d-none{
+    display: none !important;
+}
+
+.loading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: fixed;
+    width: 100%;
+    background-color: rgba(0,0,0,0.2);
+}
+
+.loader {
+    width: 48px;
+    height: 48px;
+    display: inline-block;
+    position: relative;
+    border-width: 3px 2px 3px 2px;
+    border-style: solid dotted solid dotted;
+    border-color: #de3500 rgba(255, 255, 255,0.3) #fff rgba(151, 107, 93, 0.3);
+    border-radius: 50%;
+    box-sizing: border-box;
+    animation: 1s rotate linear infinite;
+ }
+
+.loader:before , .loader:after{
+    content: '';
+    top: 0;
+    left: 0;
+    position: absolute;
+    border: 10px solid transparent;
+    border-bottom-color:#fff;
+    transform: translate(-10px, 19px) rotate(-35deg);
+}
+.loader:after {
+    border-color: #de3500 #0000 #0000 #0000 ;
+    transform: translate(32px, 3px) rotate(-35deg);
+  }
+   @keyframes rotate {
+    100%{    transform: rotate(360deg)}
+}
+
+
+
+.my-modal{
+    background-color: rgba(0, 0, 0, 0.5);
+    width:100%;
+    height: 100%;
+    position: fixed;
+    top:0px;
+    left:0;
+    display: flex; /* أهم سطر */
+    justify-content: center;
+    align-items: center;
+
+    user-select: none;
+  }
+  
+  .my-modal img{
+    background-color: rgb(120, 191, 204);
+    padding:50px 100px;
+    border-radius: 20px;
+    box-shadow: 0 10px 5px 5px rgba(84, 132, 155, 0.541);
+    position:relative;
+   
+  }
+  .my-modal img{
+  width:300px;
+  }
+
+
+  .left-btn,.right-btn,.close-btn {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding:10px;
+    color:rgb(231, 185, 185);
+    border-radius: 20px;
+  }
+
+
+  .left-btn{
+    left:10px;
+    top: 50%;
+  }
+
+  .right-btn{
+    right:10px;
+    top: 50%;
+  }
+
+  .close-btn{
+    top: 10px;
+    left: 10px;
+  }
+
+  .d-none {
+    display: none;
+  }
+
+  .product img, .close-btn ,.right-btn,   .left-btn{
+    cursor:pointer;
+  }
+
+  .pagination {
+    display:flex;
+    list-style-type: none;
+    gap:20px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+  }
+
+.pagination button {
+  padding: 8px 14px;
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 16px;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.pagination button:hover {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+.pagination button:disabled {
+  background-color: #6b0000;
+  color: #999;
+  border-color: #ccc;
+  cursor: not-allowed;
+}
+
+.pagination button.active {
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+  border-color: #007bff;
+  box-shadow: 0 2px 5px rgba(0, 123, 255, 0.3);
+}
+
+
+
+
+.pagination button.active {
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+  border-radius: 6px;
+  padding: 6px 12px;
+}
